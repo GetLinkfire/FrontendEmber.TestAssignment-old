@@ -1,0 +1,5 @@
+{{#link-to 'application'}}Back{{/link-to}}
+{{#if model.name}}hola {{/if}}
+{{#each model.songs as |song|}}
+	la cancon es: {{song.id}} + nombre + {{song.name}}<br/>
+{{/each}}
