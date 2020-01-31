@@ -7,9 +7,7 @@ export default Component.extend({
 
     showForm: false,
 
-    newSong: {
-        title: undefined
-    },
+    newSong: null,
 
     genres: null,
 
@@ -22,6 +20,9 @@ export default Component.extend({
 
         this.set('genres', this.store.findAll('genre'));
         this.set('artists', this.store.findAll('artist'));
+        this.set('newSong', {
+            title: undefined
+        });
     },
 
     actions: {

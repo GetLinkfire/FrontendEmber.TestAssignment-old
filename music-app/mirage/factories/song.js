@@ -1,4 +1,4 @@
-import { Factory, association, trait, belongsTo } from 'ember-cli-mirage';
+import { Factory } from 'ember-cli-mirage';
 
 export default Factory.extend({
 
@@ -10,7 +10,7 @@ export default Factory.extend({
         const genres = server.schema.genres.all();
         const randomGenre = genres.models[Math.floor(Math.random() * genres.length)];
         const artists = server.schema.artists.all();
-        const selectedArtists = artists.filter((artist) =>
+        const selectedArtists = artists.filter(() =>
             Math.floor(Math.random() * 2) % 2 === 0
         );
 

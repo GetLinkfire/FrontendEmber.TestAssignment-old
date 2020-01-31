@@ -1,23 +1,23 @@
 <div>
-    <div class="music-list-filter">
-        <label for="byName" class="Filter__label">Search</label>
-        {{input value=textToSearch}}
-        <button {{action 'searchByText' textToSearch}}>Go</button>
-    </div>
-    <ul class="album-list">
-        {{#each albumsToShow as |album|}}
-            <li class="album">
-                {{#link-to 'albums' album.id}}
-                    <div>
-                        <div>
-                            <img src={{album.cover}} alt={{album.name}}>
-                        </div>
-                        <div>
-                            <h3>{{album.name}}</h3>
-                        </div>
-                    </div>
-                {{/link-to}}
-            </li>
-        {{/each}}
-    </ul>
+		<div class="music-list-filter">
+				<label for="byName" class="Filter__label">Search</label>
+				{{input value=textToSearch}}
+				<button {{action "searchByText" textToSearch}}>Go</button>
+		</div>
+		<ul class="album-list">
+				{{#each albumsToShow as |album|}}
+						<li class="album">
+								{{#link-to "albums" album.id}}
+										<div>
+												<div>
+														<img src={{album.cover}} alt={{album.name}}>
+												</div>
+												<div>
+														<h3>{{album.name}}</h3>
+												</div>
+										</div>
+								{{/link-to}}
+						</li>
+				{{/each}}
+		</ul>
 </div>

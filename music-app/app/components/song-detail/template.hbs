@@ -1,20 +1,20 @@
 {{#if showForm}}
-    <td>{{input value=songToEdit.title placeholder=song.title}}</td>
-    <td>
-        <select id='selectGenre'>
-            {{#each genres as |genre|}}
-                <option value={{genre.id}}>{{genre.name}}</option>
-            {{/each}}
-        </select>
-    </td>
-    <td>//TODO</td>
-    <td>
-        <button {{action 'updateSong'}}>Save</button>
-        <button {{action 'toggleForm'}}>Cancel</button>
-    </td>
+		<td>{{input value=songToEdit.title placeholder=song.title}}</td>
+		<td>
+				<select id="selectGenre">
+						{{#each genres as |genre|}}
+								<option value={{genre.id}}>{{genre.name}}</option>
+						{{/each}}
+				</select>
+		</td>
+		<td>//TODO</td>
+		<td>
+				<button {{action "updateSong"}}>Save</button>
+				<button {{action "toggleForm"}}>Cancel</button>
+		</td>
 {{else}}
-    <td>{{song.title}}</td>
-    <td>{{song.genre.name}}</td>
-    <td>{{artistNames}}</td>
-    <td><button {{action 'toggleForm'}}>Edit song</button></td>
+		<td>{{song.title}}</td>
+		<td>{{song.genre.name}}</td>
+		<td>{{artistNames}}</td>
+		<td><button {{action "toggleForm"}}>Edit song</button></td>
 {{/if}}

@@ -12,11 +12,6 @@ export default function() {
   this.get('/genres/:id');
   this.get('/artists');
   this.get('/artists/:id');
-  /*this.get('/albums/:id/songs', (schema, request) => {
-    let album = schema.albums.find(request.params.id);
-
-    return album.songs;
-  })*/
 
   // These comments are here to help you get started. Feel free to delete them.
 

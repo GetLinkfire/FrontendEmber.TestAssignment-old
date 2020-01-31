@@ -1,13 +1,12 @@
-import Model from '@ember-data/model';
-import DS from 'ember-data';
+import Model, { attr, belongsTo, hasMany } from '@ember-data/model';
 
 export default Model.extend({
 
-    title: DS.attr(),
+    title: attr(),
 
-    album: DS.belongsTo('album'),
+    album: belongsTo('album'),
 
-    genre: DS.belongsTo('genre', { inverse: null }),
+    genre: belongsTo('genre', { inverse: null }),
 
-    artists: DS.hasMany('artist', { inverse: null })
+    artists: hasMany('artist', { inverse: null })
 });

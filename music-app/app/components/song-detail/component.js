@@ -7,9 +7,7 @@ export default Component.extend({
 
     song: null,
 
-    songToEdit: {
-        title: undefined
-    },
+    songToEdit: null,
 
     showForm: false,
 
@@ -20,12 +18,12 @@ export default Component.extend({
     init() {
         this._super(...arguments);
         this.set('artistNames', this.getArtistsNames(this.get('song.artists')));
+        this.set('songToEdit', {
+            title: undefined
+        });
     },
 
     getArtistsNames(artists) {
-        artists.then((data) => {
-            console.log('mierda');
-        });
         let names = '';
 
         if (artists && artists.length) {

@@ -2,13 +2,9 @@ import Component from '@ember/component';
 
 export default Component.extend({
 
-    albums: [],
+    albums: null,
 
-    albumsToShow: [],
-
-    sortByNameAsc: true,
-
-    sortByIdAsc: true,
+    albumsToShow: null,
 
     textToSearch: '',
 
@@ -18,19 +14,6 @@ export default Component.extend({
     },
 
     actions: {
-        sort(sortParam) {
-            const albums = this.get('albums');
-            if (sortParam === 'id') {
-                if (this.get('sortByIdAsc')) {
-                    albums.sortBy('id');
-                } else {
-                    albums.sortBy('id').reverse();
-                }
-                this.toggleProperty('sortByIdAsc');
-            }
-            console.log('eeeeeh');
-        },
-
         searchByText(textToSearch) {
             this.set('albumsToShow', this.get('albums').filter((album) => album.name.toLowerCase().includes(textToSearch.toLowerCase())));
         }
