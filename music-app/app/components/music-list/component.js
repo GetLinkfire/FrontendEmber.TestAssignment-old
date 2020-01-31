@@ -10,6 +10,8 @@ export default Component.extend({
 
     sortByIdAsc: true,
 
+    textToSearch: '',
+
     init() {
         this._super(...arguments);
         this.set('albumsToShow', this.get('albums'));
@@ -30,7 +32,7 @@ export default Component.extend({
         },
 
         searchByText(textToSearch) {
-            this.set('albumsToShow', this.get('albums').filterBy('name', textToSearch)); 
+            this.set('albumsToShow', this.get('albums').filter((album) => album.name.toLowerCase().includes(textToSearch.toLowerCase())));
         }
     }
 });

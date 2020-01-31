@@ -2,16 +2,16 @@ export default function() {
 
   this.namespace = '';
 
-  this.get('/albums', function(schema, request) {
-    //return schema.albums.all();
-    let albums = schema.albums.all();
-  let json = this.serialize(albums);
-
-  //json.meta.size = albums.length;
-
-  return json;
-  });
+  this.get('/albums');
   this.get('/albums/:id');
+  this.get('/songs');
+  this.get('/songs/:id');
+  this.post('/songs');
+  this.patch('/songs/:id');
+  this.get('/genres');
+  this.get('/genres/:id');
+  this.get('/artists');
+  this.get('/artists/:id');
   /*this.get('/albums/:id/songs', (schema, request) => {
     let album = schema.albums.find(request.params.id);
 

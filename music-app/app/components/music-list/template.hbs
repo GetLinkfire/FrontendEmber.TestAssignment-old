@@ -1,12 +1,13 @@
 <div>
     <div class="music-list-filter">
         <label for="byName" class="Filter__label">Search</label>
-        {{input value=searchByText key-press=(action "searchByText")}}
+        {{input value=textToSearch}}
+        <button {{action 'searchByText' textToSearch}}>Go</button>
     </div>
     <ul class="album-list">
         {{#each albumsToShow as |album|}}
             <li class="album">
-                {{#link-to 'album' album.id}}
+                {{#link-to 'albums' album.id}}
                     <div>
                         <div>
                             <img src={{album.cover}} alt={{album.name}}>
@@ -15,7 +16,7 @@
                             <h3>{{album.name}}</h3>
                         </div>
                     </div>
-                {{/link-to}}    
+                {{/link-to}}
             </li>
         {{/each}}
     </ul>
