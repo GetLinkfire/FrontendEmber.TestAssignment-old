@@ -24,5 +24,12 @@ Songs for {{album.name}} album:
         {{/each}}
     </select>
     <br/>
+    Artists:
+    <br/>
+    {{#each artists as |artist|}}
+        {{input type='checkbox' checked=foo}}
+        <option value={{artists.id}}>{{artist.name}}</option>
+    {{/each}}
+    <br/>
     <button {{action 'addSong'}}>New</button>
 {{/if}}
