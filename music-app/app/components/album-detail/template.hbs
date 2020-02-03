@@ -1,0 +1,40 @@
+{{#link-to "application"}}Back{{/link-to}}
+Songs for {{album.name}} album:
+<br>
+<table>
+		<thead>
+				<tr>
+						<th>Title</th>
+						<th>Genre</th>
+						<th>Artists</th>
+				</tr>
+		</thead>
+		<tbody>
+				{{#each album.songs as |song|}}
+						{{song-detail song=song genres=genres}}
+				{{/each}}
+		</tbody>
+</table>
+
+<br>
+<button {{action "toggleForm"}}>Add song</button>
+	{{#if showForm}}
+			<br>
+			Name: {{input value=newSong.title}}
+			<br>
+			Genre:
+			<select id="selectGenre">
+					{{#each genres as |genre|}}
+							<option value={{genre.id}}>{{genre.name}}</option>
+					{{/each}}
+			</select>
+			<br>
+			Artists:
+			<br>
+			{{#each artists as |artist|}}
+					{{input type="checkbox" checked=foo}}
+					<option value={{artists.id}}>{{artist.name}}</option>
+			{{/each}}
+			<br>
+			<button {{action "addSong"}}>New</button>
+	{{/if}}
